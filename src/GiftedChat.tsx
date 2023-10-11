@@ -496,9 +496,10 @@ function GiftedChat<TMessage extends IMessage = IMessage>(
       messages = [messages]
     }
 
-    const newMessages: TMessage[] = messages.map(message => {
+    const newMessages: TMessage[] = messages.map((message, index) => {
       return {
         ...message,
+        index,
         user: user!,
         createdAt: new Date(),
         _id: messageIdGenerator && messageIdGenerator(),

@@ -222,6 +222,7 @@ export default class MessageContainer<
     if (!item._id && item._id !== 0) {
       warning('GiftedChat: `_id` is missing for message', JSON.stringify(item))
     }
+    item.index = index
     if (!item.user) {
       if (!item.system) {
         warning(
